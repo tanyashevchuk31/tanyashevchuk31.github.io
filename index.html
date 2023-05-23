@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pangolin:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Gugi:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="logos-icon" alt="" src="./assets/svg/logos.svg" />
+      <img class="logos-vert" alt="" src="./assets/png/Logos.png" />
+      <div class="goods">
+       
+        <div class="categories" id="c">
+          <div class="parent">
+            <div class="div">
+              <div class="child"></div>
+              <div class="div2">Конструкт<br>оры</div>
+            </div>
+            <div class="div3">
+              <div class="child"></div>
+              <div class="div2">Игрушки до 3ёх лет</div>
+            </div>
+            <div class="div6">
+              <div class="child"></div>
+              <div class="div2">
+                <p class="p">Машинки</p>
+              </div>
+            </div>
+            <div class="div9">
+              <div class="child"></div>
+              <div class="div2">
+                <p class="p">Творчество</p>
+                <p class="p">&nbsp;</p>
+              </div>
+            </div>
+            <div class="div12">
+              <div class="child"></div>
+              <div class="div13">Куклы</div>
+            </div>
+          </div>
+          <div class="div14">Категории:</div>
+        </div>
+        <div class="new">
+          <div class="div18">Новинки:</div>
+        </div>
+        <section class="photo">
+          <div class="container">
+            <div class="photo__buttons">
+              <button class="button button_color" data-season="winter">Обычные</button>
+              <button class="button" data-season="spring">Настолки</button>
+            </div>
+            <div class="photo__slider">
+              <div class="slider">
+                <div class="photo__image slider_left">
+                <img src="https://pibig.info/uploads/posts/2021-06/1624474481_5-pibig_info-p-krasivie-zimnie-priroda-krasivo-foto-5.jpg" alt="image 1">
+                <img src="https://gagaru.club/uploads/posts/2023-02/1676708280_gagaru-club-p-zimnie-peizazhi-krasivie-kartini-krasivo-6.jpg" alt="image 2">
+                <img src="https://proprikol.ru/wp-content/uploads/2019/12/krasivye-kartinki-pro-zimu-62.jpg" alt="image 3">
+              </div>
+                <div class="photo__image slider_center">
+                <img src="./assets/png/Bratz.png" alt="image 1">
+                <img src="./assets/png/HotWheels.png" alt="image 2">
+                <img src="./assets/png/HelloKitty.png" alt="image 3">
+              </div>
+                <div class="photo__image slider_right">
+                <img src="https://pibig.info/uploads/posts/2021-06/1624474481_5-pibig_info-p-krasivie-zimnie-priroda-krasivo-foto-5.jpg" alt="image 1">
+                <img src="https://gagaru.club/uploads/posts/2023-02/1676708280_gagaru-club-p-zimnie-peizazhi-krasivie-kartini-krasivo-6.jpg" alt="image 2">
+                <img src="https://proprikol.ru/wp-content/uploads/2019/12/krasivye-kartinki-pro-zimu-62.jpg" alt="image 3">
+              </div>
+              </div>
+              <div class="arrows">
+                <button class="button_slider_left"><--</button>
+                <button class="button_slider_right">--></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <script>
+          const seasons = {
+            winter: [
+              './assets/png/Bratz.png',
+              './assets/png/HotWheels.png',
+              './assets/png/HelloKitty.png',
+              'https://webstockreview.net/images/legos-clipart-lego-land-5.png',
+              'https://i.pinimg.com/originals/b8/c8/d7/b8c8d7cf8098c55614fc02fa30b1c23c.jpg'
+            ],
+            spring: [
+              'https://www.pngjoy.com/pngl/146/23696637_transparent-monopoly-guy-png-transparent-png-monopoly-logo.png',
+              'https://steamuserimages-a.akamaihd.net/ugc/808871372365640739/222724FB934F890225E3207AB559FC96FE422ACD/?imw=512&amp;imh=359&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true',
+              'https://cheihod.ru/upload/iblock/f75/f75ba94afeef46b881e2324ebad8fc3c.jpg',
+              'https://blog.allo.ua/wp-content/uploads/2021/03/Nastolnaya-igra-Tactic-Alias-s-kubikami.png'
+            ],
+            summer: [
+              'https://mobimg.b-cdn.net/v3/fetch/16/16410d56242cdd30d6c20c26d0740e26.jpeg',
+              'https://vsegda-pomnim.com/uploads/posts/2022-04/1649118807_9-vsegda-pomnim-com-p-krasivie-peizazhi-prirodi-leto-foto-9.jpg',
+              'https://thypix.com/wp-content/uploads/2018/05/Sommerlandschaft-Bilder-39.jpg'
+            ],
+            autumn: [
+              'https://klike.net/uploads/posts/2022-08/1661232461_j-51.jpg',
+              'https://w-dog.ru/wallpapers/9/9/514842286559747/priroda-les-park-derevya-listya-krasochnye-doroga-osen-padenie-cveta-progulka.jpg',
+              'https://w-dog.ru/wallpapers/10/12/470823373396813/osen-rechka-bereg-berezy-listya-zheltye.jpg'
+            ],
+          }
+  
+          const imagesLeft = Array.from(document.querySelector('.slider_left').children);
+          const imagesCenter = Array.from(document.querySelector('.slider_center').children);
+          const imagesRight = Array.from(document.querySelector('.slider_right').children);
+  
+          let season = 'winter';
+  
+          function redrawPhoto(arr) {
+            arr.forEach((image, index) => image.src = seasons[season][index]);
+          }
+  
+          function changeImage (event) {
+            season = event.target.dataset.season;
+            redrawPhoto(imagesCenter);
+            // Array.from(imagesCenter).forEach((image, index) => image.src = './assets/seasons/' + season + '/' + (index + 1) + '.jpg');
+            
+            const buttons = document.querySelector('.photo__buttons').children;
+            Array.from(buttons).forEach(button => {
+              if (button.dataset.season == season) {
+                button.classList.add('button_color');
+              } else {
+                button.classList.remove('button_color');
+              };
+            });
+            
+          };
+  
+          function buttonClick (event) {
+            if (event.target.classList.contains('button')) {
+              changeImage (event);
+            };
+          };
+  
+          document.querySelector('.photo__buttons').addEventListener('click', buttonClick);
+  
+          //slider
+          function shiftPhoto(arrow) {
+            const w = window.innerWidth >= 768 ? 2 : 1;
+            if (arrow == 'left') {
+              seasons[season] = seasons[season].slice(w).concat(seasons[season].slice(0, w));
+            } else if (arrow == 'right') {
+              seasons[season] = seasons[season].slice(-w).concat(seasons[season].slice(0, -w));
+            }
+          }
+          const slider = document.querySelector('.slider');
+          const buttonLeft = document.querySelector('.button_slider_left');
+          const buttonRight = document.querySelector('.button_slider_right');
+  
+          function sliderLeft() {
+            buttonLeft.removeEventListener('click', sliderRight);
+            buttonRight.removeEventListener('click', sliderLeft);
+            slider.classList.add('move_left');
+            shiftPhoto('left');
+            redrawPhoto(imagesRight);
+          };
+  
+          function sliderRight() {
+            buttonLeft.removeEventListener('click', sliderRight);
+            buttonRight.removeEventListener('click', sliderLeft);
+            slider.classList.add('move_right');
+            shiftPhoto('right');
+            redrawPhoto(imagesLeft);
+          };
+          slider.addEventListener('animationend', () => {
+            redrawPhoto(imagesCenter);
+            slider.classList.remove('move_left');
+            slider.classList.remove('move_right');
+            buttonLeft.addEventListener('click', sliderRight);
+            buttonRight.addEventListener('click', sliderLeft);
+          });
+          buttonLeft.addEventListener('click', sliderRight);
+          buttonRight.addEventListener('click', sliderLeft);
+  
+        </script>
+      </div>
+      <div class="slogan">
+        <div class="div19"></div>
+        <div class="div20">
+          <span>И почему у меня в детстве таких не было</span>
+          <span class="span">?</span>
+        </div>
+        <img class="icon2" alt="" src="./assets/png/-@2x.png" />
+      </div>
+      <div class="menu">
+        <nav class="hmenu">
+        
+          <input id="menu-toggle" type="checkbox">
+          <label class="menu-btn" for="menu-toggle">
+            <span></span>
+          </label>
+  
+          <ul class="menu__box">
+            <li><a class="menu__item" href="#a">О нас</a></li>
+            <li><a class="menu__item" href="#c">Каталог товаров</a></li>
+            <li><a class="menu__item" href="cart.html">Корзина</a></li>
+          </ul>
+        </nav>
+        <div class="links">
+          <a href="#a">
+          <div class="div21">
+            <p class="p">О нас</p>
+          </div>
+          </a>
+          <a href="#c">
+          <div class="div22">Каталог товаров</div>
+          </a>
+          <div class="signup">
+            <div class="div23">Войти</div>
+            <div class="signup-child"></div>
+          </div>
+          <div class="div24">Регистрация</div>
+          <a href="cart.html">
+          <img class="icon3" alt="" src="./assets/png/-1@2x.png" />
+          </a>
+        </div>
+        <div class="menu-child"></div>
+        <div class="logoheader">
+          <div class="t-ys">t YS</div>
+          <img class="teddylogo-icon" alt="" src="./assets/png/teddylogo@2x.png" />
+        </div>
+      </div>
+      <div class="aboutus" id="a">
+        <div class="buy">
+          <div class="div25">
+            Место, где детям можно купить игрушки хорошего качества:
+          </div>
+          <div class="div26">
+            Детских игрушек во всем мире очень много, поэтому, ассортимент
+            нашего магазина игрушек постоянно расширяется. При этом мы стараемся
+            внимательно следить за качеством товара, и зачастую просим наших
+            сотрудников, которые почти все являются родителями, дать игрушки
+            детям для проверки их «интересности».
+          </div>
+        </div>
+        <div class="remote">
+
+          <div class="div27">
+            Место, где можно купить игрушки не выходя из дома:
+          </div>
+          <div class="div28">
+            У нас можно купить игрушки в режиме он-лайн, заказать доставку по
+            городу Брест (Заказы принятые до 16.00 будут доставляться в тот же
+            день с 18.00 до 22.00) или в другие регионы по Беларуси (от 3 до 7
+            дней).
+          </div>
+        </div>
+        <div class="read">
+          <div class="div29">
+            Место, где можно прочитать про детские товары что-нибудь интересное
+            и полезное:
+          </div>
+          <div class="div30">
+            Не так давно мы начали собирать статьи про те детские товары,
+            которые размещены на «полках» нашего интернет-магазина. Статьи
+            бывают двух типов: во-первых, это статьи про детские игрушки в
+            целом. В этих текстах мы пишем о критериях выбора игрушек, об игре,
+            детском развитии и творчестве.
+          </div>
+        </div>
+        <div class="title">
+          <b class="b">Сегодня магазин детских игрушек это:</b>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-child"></div>
+        <div class="footergroup">
+          <div class="div31">Шевчук Татьяна</div>
+          <div class="footercontacs">
+            <div class="adress">
+              <div class="div32">
+                <p class="p">г.Брест ул.Московская 267</p>
+                <p class="p"></p>
+              </div>
+              <img class="adressicon" alt="" src="./assets/png/adressicon@2x.png" />
+            </div>
+            <div class="e-mail">
+              <div class="elb00323gbstuby">elb00323@g.bstu.by</div>
+              <img class="mailicon" alt="" src="./assets/png/mailicon@2x.png" />
+            </div>
+            <div class="phone">
+              <div class="div33">+375295653159</div>
+              <img class="phoneicon" alt="" src="./assets/png/phoneicon@2x.png" />
+            </div>
+          </div>
+          <div class="logofooter">
+            <div class="t-ys">t YS</div>
+            <img
+              class="teddylogo-icon"
+              alt=""
+              src="./assets/png/teddylogo@2x.png"
+            />
+          </div>
+        </div>
+        <div class="socials">
+          <img class="image-8-icon" alt="" src="./assets/png/image-8@2x.png" />
+
+          <img class="image-7-icon" alt="" src="./assets/png/image-7@2x.png" />
+
+          <img class="image-6-icon" alt="" src="./assets/png/image-6@2x.png" />
+
+          <img class="image-5-icon" alt="" src="./assets/png/image-5@2x.png" />
+
+          <img class="image-9-icon" alt="" src="./assets/png/image-9@2x.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

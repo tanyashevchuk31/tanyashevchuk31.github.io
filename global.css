@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-pangolin: Pangolin;
+  --font-montserrat: Montserrat;
+  --font-gugi: Gugi;
+
+  /* font sizes */
+  --font-size-29xl: 48px;
+  --font-size-xl: 20px;
+  --font-size-5xl: 24px;
+  --font-size-mini: 15px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gray: #3a1602;
+  --color-saddlebrown-100: #531e00;
+  --color-saddlebrown-200: rgba(103, 57, 14, 0.1);
+  --color-black: #000;
+}

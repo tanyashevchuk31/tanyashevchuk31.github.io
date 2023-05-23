@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Pangolin:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Gugi:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1" id="second">
+          <div class="menu">
+                <div class="logoheader">
+                    <div class="t-ys">t YS</div>
+                    <img class="teddylogo-icon" alt="" src="./assets/png/teddylogo@2x.png" />
+                </div>
+                <ul class="cartnav">
+                   <a href="index.html"><li>Главаная</li></a>
+                </ul>
+            </div>
+            <img class="teddy-icon" src="./assets/png/TEDDY 1.png" alt="">
+            <div class="line"></div>
+            <h2 class="cart_title">Корзина</h2>
+            <form>
+                <label for="products">Выберите товар:</label>
+                <br>
+                <select id="products">
+                  <option value="">--Выберите товар--</option>
+                  <option value="Кукла барби" data-price="15">Кукла Барби (15 рублей)</option>
+                  <option value="Джип HotWheels" data-price="40">Джип HotWheels (40 рублей)</option>
+                  <option value="Кукла Братз" data-price="100">Кукла Братз(100 рублей)</option>
+                </select>
+                <br>
+                <label for="quantity">Количество:</label>
+                <br>
+                <input type="number" id="quantity" min="1" max="10">
+                <br>
+                <button type="button" id="add-to-cart">Добавить в корзину</button>
+             </form>
+             <div class="order">
+              <ul id="cart"></ul>
+              <p id="total"></p>
+              <button class="orderbtn" onclick="finish()">Оформиить заказ</button>
+            </div>
+            <script>
+                function finish(){
+                    alert("Заказ успешно оформлен!");
+                    location.reload();  
+                }
+                // Находим элементы HTML:
+                    const productsSelect = document.getElementById('products');
+                    const quantityInput = document.getElementById('quantity');
+                    const addToCartButton = document.getElementById('add-to-cart');
+                    const cartList = document.getElementById('cart');
+                    const total = document.getElementById('total');
+
+                    // Объявляем объект корзины:
+                    const cart = {
+                    items: [],
+                    
+                    // Метод для добавления товара в корзину:
+                    addItem(item) {
+                        this.items.push(item);
+                    },
+                    
+                    // Метод для подсчета общей стоимости товаров в корзине:
+                    getTotal() {
+                        return this.items.reduce((total, item) => {
+                        return total + (item.price * item.quantity);
+                        }, 0);
+                    },
+                    
+                    // Метод для отображения корзины:
+                    render() {
+                        cartList.innerHTML = '';
+                        this.items.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = `${item.quantity} x ${item.product} - ${item.price * item.quantity} руб.`;
+                        cartList.appendChild(li);
+                        });
+                        
+                        total.textContent = `Общая стоимость: ${this.getTotal()} руб.`;
+                    }
+                    };
+
+                    // Обработчик события клика на кнопку "Добавить в корзину":
+                    addToCartButton.addEventListener('click', () => {
+                    const product = productsSelect.value;
+                    const quantity = quantityInput.value;
+                    
+                    if (product && quantity) {
+                        const price = parseFloat(productsSelect.options[productsSelect.selectedIndex].getAttribute('data-price'));
+                        
+                        // Создаем объект товара и добавляем его в корзину:
+                        const item = { product, quantity, price };
+                        cart.addItem(item);
+                        
+                        // Отображаем корзину:
+                        cart.render();
+                        
+                        // Очищаем поля выбора товара и ввода количества:
+                        productsSelect.value = '';
+                        quantityInput.value = '';
+                    }
+                    });
+
+            </script>
+            <div class="footer">
+                <div class="footer-child"></div>
+                <div class="footergroup">
+                  <div class="div31">Шевчук Татьяна</div>
+                  <div class="footercontacs">
+                    <div class="adress">
+                      <div class="div32">
+                        <p class="p">г.Брест ул.Московская 267</p>
+                        <p class="p"></p>
+                      </div>
+                      <img class="adressicon" alt="" src="./assets/png/adressicon@2x.png" />
+                    </div>
+                    <div class="e-mail">
+                      <div class="elb00323gbstuby">elb00323@g.bstu.by</div>
+                      <img class="mailicon" alt="" src="./assets/png/mailicon@2x.png" />
+                    </div>
+                    <div class="phone">
+                      <div class="div33">+375295653159</div>
+                      <img class="phoneicon" alt="" src="./assets/png/phoneicon@2x.png" />
+                    </div>
+                  </div>
+                  <div class="logofooter">
+                    <div class="t-ys">t YS</div>
+                    <img
+                      class="teddylogo-icon"
+                      alt=""
+                      src="./assets/png/teddylogo@2x.png"
+                    />
+                  </div>
+                </div>
+                <div class="socials">
+                  <img class="image-8-icon" alt="" src="./assets/png/image-8@2x.png" />
+        
+                  <img class="image-7-icon" alt="" src="./assets/png/image-7@2x.png" />
+        
+                  <img class="image-6-icon" alt="" src="./assets/png/image-6@2x.png" />
+        
+                  <img class="image-5-icon" alt="" src="./assets/png/image-5@2x.png" />
+        
+                  <img class="image-9-icon" alt="" src="./assets/png/image-9@2x.png" />
+                </div>
+              </div>
+     </div>
+    </body>
+    </html>
